@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chandrashekhar Dikonda Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE work: a confident, polished UK professional portfolio, calm and corporate
+   IDEA a project delivery dashboard: his career and results shown as a PM would report them
+   PICTURE hero "delivery dashboard" built from his real figures, then a full-width career Gantt
+   COLOUR deep London navy hero on a fine grid with a city skyline, white body, one crimson accent
+   TYPE Archivo wide 800 display + Inter text
+   LAYOUT hero: pitch left, dashboard right; Gantt card overlaps into the white page; phone stacks title, dashboard, buttons */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0b1220);--ink:light-dark(#0d1b2a,#e8edf4);--mut:light-dark(#4b5563,#a7b1c0);--line:light-dark(#dfe4eb,#1f2b3d);--soft:light-dark(#f3f5f9,#111a2b);--card:light-dark(#ffffff,#131e31);--grey:light-dark(#b9c3d1,#45536a);--red:light-dark(#c8102e,#ff5a6e);--deep:#0b1d33;--deep2:#12284a;--deep3:#1a3560;--ok:#4ade80;--gold:#cfe0ff;--saffron:#c8102e}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:76px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto}
+.band{padding-block:clamp(56px,7vw,104px);padding-left:max(5vw,16px);padding-right:max(5vw,16px)}
+h1,h2,h3{font-family:Archivo,sans-serif;font-stretch:112%;font-weight:800;letter-spacing:-.02em;line-height:1.05;text-wrap:balance;margin:0}
+h2{font-size:clamp(30px,3.6vw,46px)}
+h3{font-size:20px;line-height:1.2}
+.lead{color:var(--mut);font-size:17px;max-width:60ch;margin:14px 0 0}
+.head{margin-bottom:40px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,#0b1d33 95%,transparent);backdrop-filter:blur(10px);color:#fff;border-bottom:1px solid #ffffff14}
+nav .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;padding:12px max(5vw,16px)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:Archivo,sans-serif;font-stretch:112%;font-weight:800;font-size:17px}
+.mono{display:grid;place-items:center;width:34px;height:34px;background:#c8102e;color:#fff;font-size:14px}
+.links{display:flex;flex-wrap:wrap;align-items:center;gap:2px 22px}
+.links a{text-decoration:none;color:#c3c7ce;font-size:15px;padding:8px 0}
+.links a:hover{color:#fff}
+.links .navbtn{background:#fff;color:#0b1d33;padding:8px 16px;font-weight:600}
+.links .navbtn:hover{background:var(--red);color:#fff}
+
+.hero{color:#fff;padding-bottom:0;background:linear-gradient(#ffffff0a 1px,transparent 1px),linear-gradient(90deg,#ffffff0a 1px,transparent 1px),radial-gradient(ellipse at 80% 0%,#1d3f6e 0%,transparent 60%),linear-gradient(180deg,#0b1d33,#0a1729);background-size:56px 56px,56px 56px,auto,auto;position:relative}
+.skyline{display:block;width:100vw;max-width:none;margin:48px 0 0 calc(50% - 50vw);height:170px;pointer-events:none}
+.skyline+.plan{margin-top:-70px}
+.border-top{height:4px;background:linear-gradient(90deg,#c8102e 0 33.3%,#ffffff 33.3% 66.6%,#1a3560 66.6%)}
+.top{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px 56px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid #ffffff2e;background:#ffffff0a;padding:7px 14px;font-size:14px;color:#dfe2e7}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px #2fcf7433}
+.hero h1{font-size:clamp(42px,6vw,76px);margin-top:24px}
+.role{font-family:Archivo,sans-serif;font-stretch:112%;font-weight:600;font-size:clamp(19px,2vw,24px);color:var(--gold);margin:14px 0 0}
+.pitch{font-size:clamp(17px,1.5vw,19px);color:#cfd3da;max-width:34em;margin:18px 0 0}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border:1.5px solid currentColor;background:transparent;color:inherit;font:600 15px Inter,sans-serif;text-decoration:none;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.btn.main{background:#c8102e;border-color:#c8102e;color:#fff}
+.btn.main:hover{background:#fff;border-color:#fff;color:var(--deep)}
+.btn.ghost:hover{background:#fff;color:var(--deep);border-color:#fff}
+.btn svg{width:18px;height:18px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.badges span{font-size:13px;color:#c3c7ce;border:1px solid #ffffff24;padding:5px 11px}
+.note{min-height:1.4em;margin:10px 0 0;font-size:14px;color:var(--ok)}
+
+.dash{background:var(--deep2);border:1px solid #ffffff1c;box-shadow:0 40px 80px -40px #000c;padding:20px}
+.dtop{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid #ffffff14}
+.dtop b{font-family:Archivo,sans-serif;font-stretch:112%;font-size:16px}
+.dtop span{font-size:13px;color:#9aa0aa}
+.status{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--ok);font-weight:600}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+.tile{background:var(--deep3);padding:14px 16px}
+.tile small{display:block;font-size:13px;color:#9aa0aa;line-height:1.3}
+.tile .v{font-family:Archivo,sans-serif;font-stretch:112%;font-weight:800;font-size:30px;line-height:1.1;margin-top:6px;white-space:nowrap}
+.tile .v em{font-style:normal;color:var(--gold)}
+.meter{height:6px;background:#ffffff14;margin-top:10px}
+.meter i{display:block;height:100%;background:var(--red)}
+.ring{display:grid;grid-template-columns:72px minmax(0,1fr);gap:14px;align-items:center;background:var(--deep3);padding:14px 16px;margin-top:12px}
+.ring svg{width:72px;height:72px}
+.ring b{display:block;font-size:15px}
+.ring span{font-size:13px;color:#9aa0aa}
+.miles{margin:14px 0 0;padding:0;list-style:none}
+.miles li{display:grid;grid-template-columns:12px minmax(0,1fr) auto;gap:12px;align-items:center;padding:9px 0;border-top:1px solid #ffffff12;font-size:14px}
+.miles li i{width:10px;height:10px;border-radius:50%}
+.miles li span{color:#9aa0aa;font-size:13px;white-space:nowrap}
+.dnote{font-size:13px;color:#7f8590;margin:10px 0 0}
+
+.plan{background:var(--card);color:var(--ink);box-shadow:0 30px 60px -34px #0b1d3399;padding:26px clamp(16px,3vw,32px) 20px;position:relative;top:64px;margin-top:72px;border-top:4px solid #c8102e}
+.planhead{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;align-items:baseline;margin-bottom:14px}
+.planhead h3{font-size:19px}
+.key{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--mut)}
+.key i{display:inline-block;width:14px;height:10px;margin-right:6px;vertical-align:middle}
+.axis,.row{display:grid;grid-template-columns:minmax(170px,25%) minmax(0,1fr);gap:18px}
+.axis{font-size:13px;color:var(--mut);padding:6px 0 8px;border-bottom:2px solid var(--ink)}
+.ticks{position:relative;height:18px}
+.ticks span{position:absolute;transform:translateX(-50%);white-space:nowrap}
+.row{padding:8px 0;border-bottom:1px solid var(--line);align-items:center}
+.row:last-child{border-bottom:0}
+.lab{font-size:13px;line-height:1.3;color:var(--mut)}
+.lab b{display:block;font-size:14px;color:var(--ink);font-weight:600}
+.track{position:relative;height:24px}
+.grid{position:absolute;inset:0;display:flex}
+.grid span{flex:1;border-left:1px dashed var(--line)}
+.bar{position:absolute;top:3px;height:18px;background:var(--ink)}
+.bar.edu{background:var(--grey);margin-top:0}
+.bar.uk{background:var(--red)}
+.today{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--red)}
+.today::after{content:"Now";position:absolute;top:-2px;right:6px;font-size:12px;color:var(--red);font-weight:700}
+
+.stats{padding-top:calc(64px + clamp(56px,7vw,104px))}
+.figs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-block:1px solid var(--line)}
+.fig1{padding:26px 20px 26px 0}
+.fig1+.fig1{padding-left:20px;border-left:1px solid var(--line)}
+.num{font-family:Archivo,sans-serif;font-stretch:112%;font-weight:800;font-size:clamp(32px,3.6vw,48px);line-height:1;white-space:nowrap}
+.num em{font-style:normal;color:var(--red)}
+.fig1 p{margin:10px 0 0;font-size:14px;color:var(--mut);line-height:1.4}
+
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.wcard{border:1px solid var(--line);border-top:3px solid #c8102e;padding:28px 24px;background:var(--card)}
+.wicon{display:grid;place-items:center;width:52px;height:52px;background:var(--deep);color:#fff;margin-bottom:20px}
+.wicon svg{width:26px;height:26px}
+.wcard p{color:var(--mut);margin:12px 0 0;font-size:15px}
+.wcard .proof{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:14px;color:var(--ink)}
+.wcard .proof b{color:var(--red)}
+
+.about{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px 64px;align-items:start}
+.about p{font-size:17px;margin:0 0 16px;max-width:62ch}
+.steps{border-top:2px solid var(--ink)}
+.step{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.step svg{width:28px;height:28px;color:var(--red)}
+.step b{display:block;font-family:Archivo,sans-serif;font-stretch:112%;font-size:17px}
+.step span{color:var(--mut);font-size:15px}
+
+.alt{background:var(--soft)}
+.cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.case{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.case:hover{transform:translateY(-4px);box-shadow:0 22px 44px -26px #0007}
+.cover{height:150px;background:var(--deep);position:relative}
+.cover svg{position:absolute;inset:0;width:100%;height:100%}
+.cover .rolechip{position:absolute;left:16px;top:14px;background:#c8102e;color:#fff;font-size:12px;font-weight:600;padding:4px 10px}
+.body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+.who{font-size:13px;color:var(--mut);margin:8px 0 16px}
+.case dl{margin:0;display:grid;gap:12px}
+.case dt{font-size:13px;font-weight:600;color:var(--red)}
+.case dd{margin:2px 0 0;font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:18px}
+.tags span{background:var(--soft);font-size:13px;padding:4px 10px}
+
+.tl{position:relative;border-left:2px solid var(--line);margin-left:7px}
+.job{position:relative;padding:0 0 40px 32px}
+.job:last-child{padding-bottom:0}
+.job::before{content:"";position:absolute;left:-9px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--ink)}
+.job.uk::before{border-color:var(--red);background:var(--red)}
+.jh{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 24px;align-items:baseline}
+.when{font-weight:600;font-size:14px;color:var(--mut);white-space:nowrap}
+.org{color:var(--mut);font-size:15px;margin-top:4px}
+.job ul{margin:12px 0 0;padding-left:18px;max-width:78ch}
+.job li{margin:6px 0}
+.job li::marker{color:var(--red)}
+.job li b{font-weight:600}
+
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.panel{background:var(--card);border:1px solid var(--line);padding:24px}
+.panel h3{font-size:18px;margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{border:1px solid var(--line);padding:6px 12px;font-size:14px;background:var(--bg)}
+.list{margin:0;padding:0;list-style:none}
+.list li{padding:11px 0;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 14px;font-size:15px}
+.list li:last-child{border-bottom:0}
+.list li span{color:var(--mut);font-size:13px}
+.list .tag{color:var(--red);font-weight:600}
+.edu{margin-top:24px}
+.edu .list li b{font-weight:600}
+
+.cta{background:#c8102e;color:#fff}
+.ctain{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px 40px}
+.cta h2{font-size:clamp(26px,3vw,38px);max-width:22em}
+.cta .btn{border-color:#fff}
+.cta .btn.white{background:#fff;color:var(--red)}
+.cta .btn.white:hover{background:var(--deep);border-color:var(--deep);color:#fff}
+.cta .btn.ghost:hover{background:#fff;color:var(--red)}
+
+footer{background:#0b1d33;color:#fff}
+.foot{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px 64px;align-items:start}
+footer p{color:#c9ccd2;font-size:17px;max-width:50ch}
+.contact div{display:grid;grid-template-columns:7em minmax(0,1fr);gap:12px;padding:14px 0;border-bottom:1px solid #ffffff22}
+.contact div:first-child{border-top:1px solid #ffffff22}
+.contact span{color:#9aa0aa}
+.contact a{overflow-wrap:anywhere;text-decoration:none}
+.contact a:hover{text-decoration:underline}
+.copy{margin-top:56px;padding-top:20px;border-top:1px solid #ffffff1a;font-size:13px;color:#8a909a;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+
+@media(max-width:980px){.figs{grid-template-columns:repeat(3,minmax(0,1fr))}.fig1:nth-child(4){border-left:0;padding-left:0}.fig1:nth-child(n+4){border-top:1px solid var(--line)}.cases,.skills,.why{grid-template-columns:minmax(0,1fr)}.top,.about,.foot{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.links a:not(.navbtn){display:none}.figs{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.fig1,.fig1+.fig1{padding:20px 12px;border-left:0;border-top:1px solid var(--line)}.fig1:nth-child(even){border-left:1px solid var(--line)}.fig1:nth-child(-n+2){border-top:0}.axis,.row{grid-template-columns:minmax(0,1fr);gap:4px}.axis .lab{display:none}.ticks span:nth-child(even){display:none}.contact div{grid-template-columns:minmax(0,1fr);gap:2px}.tile .v{font-size:26px}}
+@media(prefers-reduced-motion:no-preference){.bar,.meter i{animation:grow 1s cubic-bezier(.2,.7,.2,1) both;transform-origin:left}@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.case{transition:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="#top"><span class="mono">CD</span>Chandrashekhar Dikonda</a>
+  <div class="links"><a href="#why">Why me</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a class="navbtn" href="#contact">Get in touch</a></div>
+</div></nav>
+<div class="border-top" aria-hidden="true"></div>
+
+<header class="band hero" id="top"><div class="wrap" style="position:relative">
+  <div class="top">
+    <div>
+      <span class="pill"><i></i>Open to project roles · London and UK-wide</span>
+      <h1>Chandrashekhar Dikonda</h1>
+      <p class="role">Junior / Associate Project Manager</p>
+      <p class="pitch">I turn complex work into clear plans and on-time delivery. 3+ years in IT and engineering delivery, an MSc in Project Management, and now leading consultancy projects for UK clients.</p>
+      <div class="btns">
+        <a class="btn main" href="#projects">See my projects</a>
+        <button class="btn ghost" id="copyEmail" type="button">Copy my email</button>
+        <a class="btn ghost" href="https://www.linkedin.com/in/chandrashekhar-dikonda"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg>LinkedIn</a>
+      </div>
+      <p class="note" id="copyNote" aria-live="polite"></p>
+      <div class="badges"><span>MSc Project Management</span><span>PRINCE2 (in progress)</span><span>AgilePM (in progress)</span><span>APM Student Member</span></div>
+    </div>
+
+    <aside class="dash" aria-label="Delivery dashboard">
+      <div class="dtop"><div><b>Delivery dashboard</b><br><span>Results from my roles so far</span></div><span class="status"><i></i>On track</span></div>
+      <div class="tiles">
+        <div class="tile"><small>Sprint predictability</small><div class="v">+20<em>%</em></div></div>
+        <div class="tile"><small>Defect resolution time</small><div class="v">−25<em>%</em></div></div>
+        <div class="tile"><small>Sprints delivered</small><div class="v">10<em>+</em></div></div>
+        <div class="tile"><small>End users served</small><div class="v">50k<em>+</em></div></div>
+      </div>
+      <div class="ring">
+        <svg viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="29" fill="none" stroke="#ffffff1a" stroke-width="8"/><circle cx="36" cy="36" r="29" fill="none" stroke="#2fcf74" stroke-width="8" stroke-dasharray="182.2" transform="rotate(-90 36 36)"/><text x="36" y="41" fill="#fff" font-family="Archivo" font-weight="800" font-size="16" text-anchor="middle">6/6</text></svg>
+        <div><b>Milestones on schedule</b><span>All six major DRDO project milestones kept on plan</span></div>
+      </div>
+      <ul class="miles">
+        <li><i style="background:var(--ok)"></i>Workplace Futures final delivery<span>10 Dec 2026</span></li>
+        <li><i style="background:var(--ok)"></i>V Connect client recommendations<span>Delivered</span></li>
+        <li><i style="background:#ffb020"></i>PRINCE2 Foundation and AgilePM<span>In progress</span></li>
+      </ul>
+    </aside>
+  </div>
+
+  <svg class="skyline" viewBox="0 0 1440 220" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><g fill="#16304f">
+<rect x="0" y="150" width="1440" height="70"/>
+<rect x="40" y="120" width="60" height="100"/><rect x="110" y="135" width="40" height="85"/>
+<path d="M170 220V90h14V60l10-30 10 30v30h14v130z"/><rect x="186" y="70" width="16" height="14" fill="#1d3f6e"/>
+<rect x="240" y="128" width="70" height="92"/><rect x="320" y="110" width="44" height="110"/>
+<path d="M400 220c0-60 8-110 30-140c22 30 30 80 30 140z"/>
+<rect x="490" y="100" width="56" height="120"/><rect x="556" y="140" width="80" height="80"/>
+<path d="M660 220L700 20L740 220z"/>
+<rect x="770" y="118" width="48" height="102"/><rect x="826" y="132" width="64" height="88"/>
+<rect x="900" y="95" width="36" height="125"/>
+<path d="M960 220v-70h20l20-24 20 24h20v70z"/>
+<rect x="1060" y="125" width="54" height="95"/><rect x="1122" y="105" width="40" height="115"/>
+<rect x="1176" y="140" width="70" height="80"/><rect x="1258" y="118" width="44" height="102"/><rect x="1312" y="134" width="90" height="86"/>
+</g><g fill="none" stroke="#1d3f6e" stroke-width="6"><circle cx="1210" cy="92" r="70"/></g>
+<g stroke="#1d3f6e" stroke-width="2"><line x1="1210" y1="92" x2="1280" y2="92"/><line x1="1210" y1="92" x2="1271" y2="127"/><line x1="1210" y1="92" x2="1245" y2="153"/><line x1="1210" y1="92" x2="1210" y2="162"/><line x1="1210" y1="92" x2="1175" y2="153"/><line x1="1210" y1="92" x2="1149" y2="127"/><line x1="1210" y1="92" x2="1140" y2="92"/><line x1="1210" y1="92" x2="1149" y2="57"/><line x1="1210" y1="92" x2="1175" y2="31"/><line x1="1210" y1="92" x2="1210" y2="22"/><line x1="1210" y1="92" x2="1245" y2="31"/><line x1="1210" y1="92" x2="1271" y2="57"/></g></svg>
+  <div class="plan" aria-label="Career timeline from 2013 to 2027">
+    <div class="planhead">
+      <h3>Career plan, 2013 to 2027</h3>
+      <div class="key"><span><i style="background:var(--red)"></i>UK project leadership</span><span><i style="background:var(--ink)"></i>Industry roles</span><span><i style="background:var(--grey)"></i>Education</span></div>
+    </div>
+    <div class="axis"><div class="lab">Workstream</div><div class="ticks" id="ticks"></div></div>
+    <div id="rows"></div>
+  </div>
+</div></header>
+
+<section class="band stats" aria-label="Key results"><div class="wrap">
+  <div class="figs">
+    <div class="fig1"><div class="num">3<em>+</em></div><p>Years in IT and engineering delivery</p></div>
+    <div class="fig1"><div class="num">5</div><p>People in the team I lead on my placement</p></div>
+    <div class="fig1"><div class="num">3</div><p>Consultancy projects, including one for the NHS</p></div>
+    <div class="fig1"><div class="num">~30<em>%</em></div><p>Faster onboarding for graduates I mentored</p></div>
+    <div class="fig1"><div class="num">4</div><p>Languages spoken at a professional level</p></div>
+  </div>
+</div></section>
+
+<section class="band" id="why" style="padding-top:0"><div class="wrap">
+  <div class="head"><h2>Why hire me</h2><p class="lead">A junior PM who already knows how delivery works from the inside.</p></div>
+  <div class="why">
+    <div class="wcard">
+      <div class="wicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg></div>
+      <h3>Technical credibility</h3>
+      <p>Two years as a software engineer and a year in QA mean I understand what developers and testers need, and can spot risks early.</p>
+      <div class="proof"><b>Proof:</b> built features for a platform with 50,000+ users</div>
+    </div>
+    <div class="wcard">
+      <div class="wicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></div>
+      <h3>Proven Agile delivery</h3>
+      <p>I've run backlogs, sprint planning and retrospectives, and kept phase-gated work on schedule in a high-assurance environment.</p>
+      <div class="proof"><b>Proof:</b> ~20% better sprint predictability, 6/6 milestones on plan</div>
+    </div>
+    <div class="wcard">
+      <div class="wicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 20c0-2.5 1.5-4.5 4-4.5s2 .5 2 .5"/></svg></div>
+      <h3>Leads people and clients</h3>
+      <p>I lead a five-person team and have presented recommendations to real clients, including an NHS integrated care board.</p>
+      <div class="proof"><b>Proof:</b> Project Lead and Strategy Lead roles in the UK</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="band alt" id="about"><div class="wrap about">
+  <div>
+    <h2 style="margin-bottom:24px">Delivery experience from the technical side</h2>
+    <p>I've worked on both sides of delivery. As an Associate Software Engineer at Trinity Mobility, I managed JIRA backlogs and supported Agile delivery across 10+ sprints, improving sprint predictability by about 20% on a platform serving 50,000+ users.</p>
+    <p>As a Quality Assurance Engineer at DRDO, I planned structured test strategies for mission-critical systems and kept testing on schedule across six major milestones.</p>
+    <p>In the UK, I've moved into project leadership, leading a five-person consultancy team on my placement and leading strategy for a student consultancy serving two live clients, including the NHS.</p>
+  </div>
+  <div>
+    <h3 style="margin-bottom:12px">How I work</h3>
+    <div class="steps">
+      <div class="step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg><div><b>Define the problem</b><span>Clear scope, objectives and success measures agreed with stakeholders</span></div></div>
+      <div class="step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16"/><path d="M3 9h18M8 4v16"/></svg><div><b>Plan the work</b><span>Backlogs, milestones and RAID logs the whole team can follow</span></div></div>
+      <div class="step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h12M12 6l6 6-6 6"/></svg><div><b>Deliver in steps</b><span>Sprints and phase gates, with blockers raised and cleared early</span></div></div>
+      <div class="step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg><div><b>Report and improve</b><span>Honest status reporting, sign-off packs and retrospectives</span></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="band" id="projects"><div class="wrap">
+  <div class="head"><h2>Selected projects</h2><p class="lead">Consultancy work delivered during my MSc, each with a team of five.</p></div>
+  <div class="cases" id="cases"></div>
+</div></section>
+
+<section class="band alt" id="experience"><div class="wrap">
+  <div class="head"><h2>Experience</h2></div>
+  <div class="tl" id="jobs"></div>
+</div></section>
+
+<section class="band" id="skills"><div class="wrap">
+  <div class="head"><h2>Skills and credentials</h2></div>
+  <div class="skills">
+    <div class="panel"><h3>Project delivery</h3><div class="chips" id="chipsPm"></div></div>
+    <div class="panel"><h3>Technical</h3><div class="chips" id="chipsTech"></div></div>
+    <div class="panel"><h3>Certifications</h3>
+      <ul class="list">
+        <li>PRINCE2 Foundation <span class="tag">In progress</span></li>
+        <li>AgilePM Practitioner <span class="tag">In progress</span></li>
+        <li>APM Student Member <span>Association for Project Management</span></li>
+        <li>Java Full Stack Development <span>Completed</span></li>
+        <li>Introduction to Modern AI <span>Completed</span></li>
+        <li>BCLP Interview Preparation simulation <span>Completed</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="panel edu"><h3>Education</h3>
+    <ul class="list">
+      <li><b>MSc Project Management, University of Roehampton, London</b><span>Sep 2025 – Jun 2027, with placement year</span></li>
+      <li><b>BE Electrical and Electronics Engineering, MVJ College of Engineering, Bangalore</b><span>2017 – 2020</span></li>
+      <li><b>Diploma, Electrical and Electronics Engineering, HKDET's Polytechnic College</b><span>2013 – 2016</span></li>
+    </ul>
+    <p style="margin:16px 0 0;color:var(--mut);font-size:15px">Languages: English, Hindi, Kannada and Telugu (professional working or above)</p>
+  </div>
+</div></section>
+
+<section class="band cta" style="padding-block:clamp(40px,5vw,64px)"><div class="wrap ctain">
+  <h2>Hiring a Junior PM, Project Coordinator or PMO Analyst?</h2>
+  <div class="btns" style="margin-top:0"><button class="btn white" id="copyEmail3" type="button">Copy my email</button><a class="btn ghost" href="https://www.linkedin.com/in/chandrashekhar-dikonda">Message me on LinkedIn</a></div>
+</div></section>
+
+<footer class="band" id="contact"><div class="wrap">
+  <div class="foot">
+    <div>
+      <h2>Let's talk about your next project</h2>
+      <p>I'm happy to walk you through any of the projects above, or talk about how I could support your team.</p>
+      <div class="btns"><button class="btn main" id="copyEmail2" type="button">Copy my email</button></div>
+    </div>
+    <div class="contact">
+      <div><span>Email</span><a href="mailto:dikondashekhar@gmail.com">dikondashekhar@gmail.com</a></div>
+      <div><span>Phone</span><a href="tel:+447466592278">+44 7466 592278</a></div>
+      <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/chandrashekhar-dikonda">linkedin.com/in/chandrashekhar-dikonda</a></div>
+      <div><span>Location</span>London, United Kingdom</div>
+    </div>
+  </div>
+  <div class="copy"><span>© 2026 Chandrashekhar Dikonda</span><a href="#top">Back to top ↑</a></div>
+</div></footer>
+
+<script>
+{
+  const START=2013,END=2027.5,SPAN=END-START;
+  const ym=(y,m)=>y+(m-1)/12;
+  const pct=v=>((v-START)/SPAN*100).toFixed(2)+"%";
+  const rows=[
+    ["Project Lead","Workplace Futures placement",ym(2026,11),ym(2026,12.5),"uk"],
+    ["Strategy Lead","V Connect Consultancy",ym(2026,6),ym(2026,11),"uk"],
+    ["MSc Project Management","University of Roehampton",ym(2025,9),ym(2027,6),"edu"],
+    ["QA Engineer","DRDO, Hyderabad",ym(2024,9),ym(2025,9),""],
+    ["Associate Software Engineer","Trinity Mobility, Bengaluru",ym(2022,6),ym(2024,5),""],
+    ["Electrical Technician","Techno Associates at Wipro",ym(2021,1),ym(2022,2),""],
+    ["BE Electrical and Electronics","MVJ College of Engineering",2017,2020.5,"edu"],
+    ["Diploma, Electrical and Electronics","HKDET's Polytechnic College",ym(2013,6),ym(2016,9),"edu"]
+  ];
+  const yrs=Array.from({length:15},(_,i)=>START+i);
+  document.getElementById("ticks").innerHTML=yrs.map(y=>`<span style="left:${pct(y)}">${y}</span>`).join("");
+  const gridLines=`<div class="grid" style="width:${(14/SPAN*100).toFixed(2)}%">${yrs.slice(0,14).map(()=>"<span></span>").join("")}</div>`;
+  document.getElementById("rows").innerHTML=rows.map((r,i)=>`<div class="row"><div class="lab"><b>${r[0]}</b>${r[1]}</div><div class="track">${gridLines}<div class="bar ${r[4]}" style="left:${pct(r[2])};width:calc(${((r[3]-r[2])/SPAN*100).toFixed(2)}% + 3px);animation-delay:${i*70}ms"></div>${i<1?`<div class="today" style="left:${pct(ym(2026,11.8))}"></div>`:""}</div></div>`).join("");
+
+  const covers={
+    wf:`<svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice"><rect width="400" height="150" fill="#12284a"/>${[30,46,38,60,52,74,66,92].map((h,i)=>`<rect x="${46+i*42}" y="${128-h}" width="26" height="${h}" fill="${i>5?'#c8102e':'#2a4470'}"/>`).join("")}<path d="M46 116 L360 40" stroke="#ffffff66" stroke-width="2" stroke-dasharray="5 6"/></svg>`,
+    nhs:`<svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice"><rect width="400" height="150" fill="#12284a"/>${[0,1,2].map(i=>`<rect x="${56+i*104}" y="${108-i*26}" width="88" height="${30+i*26}" fill="${i==2?'#c8102e':'#2a4470'}"/><text x="${100+i*104}" y="${98-i*26}" fill="#fff" font-family="Inter" font-size="13" text-anchor="middle">Horizon ${i+1}</text>`).join("")}</svg>`,
+    vs:`<svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice"><rect width="400" height="150" fill="#12284a"/><g fill="none" stroke="#2a4470" stroke-width="2"><circle cx="90" cy="88" r="28"/><circle cx="200" cy="62" r="28"/><circle cx="310" cy="96" r="28"/></g><path d="M117 81 L173 68 M227 69 L283 89" stroke="#c8102e" stroke-width="3"/><g fill="#fff" font-family="Inter" font-size="13" text-anchor="middle"><text x="90" y="93">UK</text><text x="200" y="67">China</text><text x="310" y="101">Brazil</text></g></svg>`
+  };
+  const cases=[
+    {c:"wf",r:"Project Lead",t:"Workplace Futures",w:"Roehampton placement · Nov 2026 – present",d:[["Brief","A consultancy project for FUNDAMENT.AI (simulated client brief) on AI and the future of work in UK professional services firms."],["My role","Lead a five-person team and own the project plan, weekly plans of action and progress journals."],["Delivery","Problem definition, research workstreams and a final client video and presentation, due 10 Dec 2026."]],g:["Team leadership","Planning","AI and work"]},
+    {c:"nhs",r:"Strategy Lead",t:"NHS South West London ICB",w:"V Connect Consultancy · 2026",d:[["Challenge","Building a sustainable local workforce pipeline for the integrated care board."],["Recommendation","A Local Talent Academy grow-your-own pipeline aligned to the NHS Long Term Workforce Plan."],["Output","A two-page brief with a phased three-horizon roadmap and balanced scorecard."]],g:["Public sector","Workforce strategy","Roadmapping"]},
+    {c:"vs",r:"Strategy Lead",t:"Verity & Stone London",w:"V Connect Consultancy · 2026",d:[["Challenge","A founder-led jewellery SME with a UK, China and Brazil supply chain and single-supplier risk."],["Recommendation","A differentiation and growth strategy with supplier-risk governance and a Supplier Code of Conduct."],["Output","Strategy deck, executive report and client presentation, aligned with finance, risk and operations."]],g:["SME strategy","Supply-chain risk","Governance"]}
+  ];
+  const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+  document.getElementById("cases").innerHTML=cases.map(k=>`<article class="case"><div class="cover">${covers[k.c]}<span class="rolechip">${k.r}</span></div><div class="body"><h3>${esc(k.t)}</h3><div class="who">${esc(k.w)}</div><dl>${k.d.map(x=>`<div><dt>${x[0]}</dt><dd>${esc(x[1])}</dd></div>`).join("")}</dl><div class="tags">${k.g.map(x=>`<span>${x}</span>`).join("")}</div></div></article>`).join("");
+
+  const jobs=[
+    {u:1,w:"Nov 2026 – Present",t:"Project Lead",o:"Workplace Futures, University of Roehampton placement · London",b:["Lead a five-person team delivering a consultancy project for FUNDAMENT.AI (simulated client brief) on AI and the future of work in UK professional services firms","Own the project plan, weekly plans of action and progress journals, keeping the team on track for the 10 December 2026 delivery","Coordinate problem definition, research workstreams and the final client video and presentation"]},
+    {u:1,w:"Jun – Nov 2026",t:"Strategy Lead",o:"V Connect Consultancy · London",b:["Led the strategy workstream in a five-person student consultancy serving two live clients","Verity & Stone London: built a differentiation and growth strategy covering supplier-concentration risk, governance and a Supplier Code of Conduct","NHS South West London ICB: wrote a brief recommending a Local Talent Academy workforce pipeline aligned to the NHS Long Term Workforce Plan","Presented recommendations to the client and an academic panel, and aligned finance, risk and operations workstreams into one strategy"]},
+    {w:"Sep 2024 – Sep 2025",t:"Quality Assurance Engineer",o:"Defence Research & Development Organisation (DRDO) · Hyderabad, India",b:["Planned and executed structured test strategies for mission-critical system components, with full requirements traceability across all project phases","Managed the end-to-end defect lifecycle in a JIRA-style defect tracker, reducing average defect resolution time by 25%","Produced test plans, defect reports and formal sign-off packs in line with ISO quality frameworks","Coordinated testing across hardware, software and systems engineering teams, keeping all six major milestones on schedule","Contributed to phase-gate reviews and process improvement, reducing rework through earlier defect identification"]},
+    {w:"Jun 2022 – May 2024",t:"Associate Software Engineer",o:"Trinity Mobility · Bengaluru, India",b:["Participated in Agile/Scrum ceremonies across 10+ sprints, supporting consistent on-time sprint delivery","Managed and prioritised the JIRA backlog with the Product Owner, improving sprint predictability by ~20%","Developed features in Core Java and SQL within a microservices architecture, including REST API integrations used by 50,000+ end users","Acted as primary liaison between development, QA and business stakeholders to clarify requirements and resolve blockers","Mentored two graduate joiners on Agile workflows, cutting their onboarding time by ~30%"]},
+    {w:"Jan 2021 – Feb 2022",t:"Electrical Technician",o:"Techno Associates, deployed at Wipro Ltd · Bengaluru, India",b:["Carried out inspection, troubleshooting and preventive maintenance of electrical systems in line with safety standards","Coordinated with facility management and engineering teams to keep operations running smoothly"]}
+  ];
+  document.getElementById("jobs").innerHTML=jobs.map(j=>`<div class="job${j.u?' uk':''}"><div class="jh"><h3>${esc(j.t)}</h3><span class="when">${j.w}</span></div><div class="org">${esc(j.o)}</div><ul>${j.b.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`).join("");
+
+  const pm=["Agile project management","Scrum","Sprint planning","Stakeholder management","Risk management","RAID logs","Status reporting","Requirements traceability","Phase-gate reviews","Backlog prioritisation","Strategic planning","Team leadership"];
+  const tech=["JIRA","Core Java","SQL","REST APIs","Git","Software testing and QA","Technical documentation"];
+  const chips=a=>a.map(s=>`<span>${s}</span>`).join("");
+  document.getElementById("chipsPm").innerHTML=chips(pm);
+  document.getElementById("chipsTech").innerHTML=chips(tech);
+
+  const note=document.getElementById("copyNote");
+  const copy=async btn=>{
+    let ok=true;
+    try{await navigator.clipboard.writeText("dikondashekhar@gmail.com");}catch(e){ok=false;}
+    note.textContent=ok?"Email copied: dikondashekhar@gmail.com":"Email: dikondashekhar@gmail.com";
+    const old=btn.textContent;btn.textContent=ok?"Copied!":"dikondashekhar@gmail.com";setTimeout(()=>{btn.textContent=old},2200);
+  };
+  ["copyEmail","copyEmail2","copyEmail3"].forEach(id=>document.getElementById(id).addEventListener("click",e=>copy(e.currentTarget)));
+}
+</script>
+</body>
+</html>
